@@ -65,3 +65,20 @@ button {
 button:hover {
   background-color: #d79921;
 }
+
+a:link {
+  color: #458588;
+}
+
+a:visited {
+  color: #076678;
+}
+
+.account {
+  width: 100%;
+  padding: 1em;
+  margin-bottom: 1em;
+  border: 2px solid #fabd2f;
+  border-radius: 1em;
+  box-sizing: border-box;
+}
