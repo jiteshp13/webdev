@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Assignment 4</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+      body {
+        font-family: 'Ubuntu', sans-serif;
+        background-color: #657ED4;
+      }
+
+      #container {
+        display: grid;
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+        grid-template-columns: auto auto auto;
+        padding: 20px;
+      }
+
+      .item {
+        background-color: #FBFBFF;
+        font-size: 20px;
+        margin: 0 auto;
+        margin-bottom: 50px;
+        padding: 20px;
+        width: 200px;
+        box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px;
+        transition: all .3s ease-in-out;
+      }
+
+      .item:hover {
+        box-shadow: rgba(0, 0, 0, 0.22) 0px 19px 43px;
+        transform: translate3d(0px, -1px, 0px);
+      }
+
+      img {
+        width: 200px;
+      }
+
+      p {
+        color: #3626A7;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div class="item">
+        <img src="https://github.com/jiteshp13/webdev/raw/main/images/hp1cover.jpg" alt="Harry Potter book 1 cover art">
+        <p><strong>Harry Potter and the Philosopher's Stone</strong></p>
+      </div>
+
+      <div class="item">
+        <img src="https://github.com/jiteshp13/webdev/raw/main/images/hp2cover.jpg" alt="Harry Potter book 2 cover art">
+        <p><strong>Harry Potter and the Chamber of Secrets</strong></p>
+      </div>
+
+      <div class="item">
+        <img src="https://github.com/jiteshp13/webdev/raw/main/images/hp3cover.jpg" alt="Harry Potter book 3 cover art">
+        <p><strong>Harry Potter and the Prisoner of Azkaban</strong></p>
+      </div>
+
+      <div class="item">
+        <img src="https://github.com/jiteshp13/webdev/raw/main/images/hp4cover.jpg" alt="Harry Potter book 4 cover art">
+        <p><strong>Harry Potter and the Goblet of Fire</strong></p>
+      </div>
+
+      <div class="item">
+        <img src="https://github.com/jiteshp13/webdev/raw/main/images/hp5cover.jpg" alt="Harry Potter book 5 cover art">
+        <p><strong>Harry Potter and the Order of the Phoenix</strong></p>
+      </div>
+
+      <div class="item">
+        <img src="https://github.com/jiteshp13/webdev/raw/main/images/hp6cover.jpg" alt="Harry Potter book 6 cover art">
+        <p><strong>Harry Potter and the Half-Blood Prince</strong></p>
+      </div>
+    </div>
+  </body>
+</html>
