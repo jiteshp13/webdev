@@ -2,12 +2,27 @@
 <html>
   <head>
     <title>Assignment 4</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 
       body {
         font-family: 'Ubuntu', sans-serif;
         background-color: #657ED4;
+      }
+
+      #header {
+        background-color: #3626A7;
+        color: #FBFBFF;
+        text-align: center;
+        padding: 10px;
+        line-height: 25px;
+        border-radius: 4px;
+      }
+
+      .header-item {
+        display: inline-flex;
+        padding: 10px;
       }
 
       #container {
@@ -42,38 +57,81 @@
         color: #3626A7;
         text-align: center;
       }
+
+      button {
+        background-color: #657ED4;
+        color: #FBFBFF;
+        font-size: 24px;
+        width: 100%;
+        margin-top: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border: 0;
+      }
+
+      button:hover {
+        background-color: #3626A7;
+      }
+
+      a:link {
+        color: #FBFBFF;
+      }
+
+      a:visited {
+        color: #FF331F;
+      }
+
+      @media (max-width: 780px) {
+        #container {
+          grid-template-columns: auto auto;
+        }
+      }
     </style>
   </head>
   <body>
+    <div id="header">
+      <h1>Harry Potter Books</h1>
+      <div class="header-item">Home</div>
+      <div class="header-item">About</div>
+      <div class="header-item">Blog</div>
+      <div class="header-item">Contact</div>
+    </div>
+
     <div id="container">
       <div class="item">
         <img src="https://github.com/jiteshp13/webdev/raw/main/images/hp1cover.jpg" alt="Harry Potter book 1 cover art">
         <p><strong>Harry Potter and the Philosopher's Stone</strong></p>
+        <a href="https://www.jkrowling.com/book/harry-potter-philosophers-stone/"><button>Read</button></a>
       </div>
 
       <div class="item">
         <img src="https://github.com/jiteshp13/webdev/raw/main/images/hp2cover.jpg" alt="Harry Potter book 2 cover art">
         <p><strong>Harry Potter and the Chamber of Secrets</strong></p>
+        <a href="https://www.jkrowling.com/book/harry-potter-chamber-secrets/"><button>Read</button></a>
       </div>
 
       <div class="item">
         <img src="https://github.com/jiteshp13/webdev/raw/main/images/hp3cover.jpg" alt="Harry Potter book 3 cover art">
         <p><strong>Harry Potter and the Prisoner of Azkaban</strong></p>
+        <a href="https://www.jkrowling.com/book/harry-potter-prisoner-azkaban/"><button>Read</button></a>
       </div>
 
       <div class="item">
         <img src="https://github.com/jiteshp13/webdev/raw/main/images/hp4cover.jpg" alt="Harry Potter book 4 cover art">
         <p><strong>Harry Potter and the Goblet of Fire</strong></p>
+        <a href="https://www.jkrowling.com/book/harry-potter-goblet-fire/"><button>Read</button></a>
       </div>
 
       <div class="item">
         <img src="https://github.com/jiteshp13/webdev/raw/main/images/hp5cover.jpg" alt="Harry Potter book 5 cover art">
         <p><strong>Harry Potter and the Order of the Phoenix</strong></p>
+        <a href="https://www.jkrowling.com/book/harry-potter-order-phoenix/"><button>Read</button></a>
       </div>
 
       <div class="item">
         <img src="https://github.com/jiteshp13/webdev/raw/main/images/hp6cover.jpg" alt="Harry Potter book 6 cover art">
         <p><strong>Harry Potter and the Half-Blood Prince</strong></p>
+        <a href="https://www.jkrowling.com/book/harry-potter-half-blood-prince/"><button>Read</button></a>
       </div>
     </div>
   </body>
