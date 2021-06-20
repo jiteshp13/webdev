@@ -77,3 +77,21 @@ exports.postBlog = (req, res) => {
         return res.status(401).send("Sign up to post blogs");
     });
 };
+
+exports.getBlog = (req, res) => {
+    let id = req.params.id;
+    id = mongoose.Types.ObjectId(id);
+
+    Blog.findOne({ _id: id })
+    .then((userExists) => {
+        if(userExists) {
+            console.log(`Blog found`);
+            return res.status(200).send(`Blog found`);
+        }
+        console.error(`No blog exists of user: ${id}`);
+        return res.status(404).send(`No blog exists of user: ${id}`);
+    }).catch((error) => {
+        console.error(error);
+        return res.status(500).send(error);
+    });
+};
