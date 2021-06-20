@@ -1,6 +1,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
 
+const adminRoute = require("./routes/adminRoute")
+
 const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -23,3 +25,5 @@ mongoose
 app.listen(PORT, () => {
   console.log(`Server is running on PORT: ${PORT}`);
 });
+
+app.use("/admin", adminRoute)
