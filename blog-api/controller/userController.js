@@ -10,7 +10,7 @@ exports.signup = (req, res) => {
 
     user.save().then(() => {
         console.log(`Successfully created new user: ${firstName} ${lastName}`);
-        return res.status(200).send("New user created");
+        return res.status(200).send(`New user created: ${firstName} ${lastName}`);
     }).catch((error) => {
         console.error("Error creating user", error);
         return res.status(500).send("Error creating user");
@@ -23,7 +23,7 @@ exports.login = (req, res) => {
     .then((userExists) => {
         if(userExists) {
             console.log(`Welcome back, ${email}`);
-            return res.status(200).send("User successfully logged in");
+            return res.status(200).send(`Welcome back, ${email}`);
         }
         console.log("Wrong username or password");
         return res.status(404).send("Wrong username or password");
@@ -44,11 +44,11 @@ exports.getUser = (req, res) => {
             console.log(`User found: ${userExists.firstName} ${userExists.lastName}`);
             return res.status(200).send(`User found: ${userExists.firstName} ${userExists.lastName}`);
         }
-        console.error("User does not exists");
-        return res.status(404).send("User does not exists");
+        console.error(`User ${id} does not exists`);
+        return res.status(404).send(`User ${id} does not exists`);
     }).catch((error) => {
         console.error(error);
-        return res.status(500).send(error);
+        return res.status(500).send("Error finding user");
     });
 };
 
@@ -66,30 +66,30 @@ exports.postBlog = (req, res) => {
             let author = response.data.slice(12);
             newBlog.save().then(() => {
                 console.log(`Hurray! Your blog has been posted ${author}`);
-                return res.status(200).send(`Hurray! Your blog has been posted ${author}`);
+                return res.status(200).send(`Hurray! Your blog has been posted ${author}.`);
             }).catch((error) => {
                 console.log("Error while posting the blog", error);
                 return res.status(500).send("Error while posting the blog");
             });
         }
     }).catch((error) => {
-        console.error(`User with ${userId} does not exist`);
-        return res.status(401).send("Sign up to post blogs");
+        console.error(`Sign up to post blogs @${userId}`);
+        return res.status(401).send(`Sign up to post blogs @${userId}`);
     });
 };
 
 exports.getBlog = (req, res) => {
-    let id = req.params.id;
-    id = mongoose.Types.ObjectId(id);
+    let userId = req.params.id;
+    userId = mongoose.Types.ObjectId(userId);
 
-    Blog.findOne({ _id: id })
+    Blog.findOne({ userId: userId })
     .then((userExists) => {
         if(userExists) {
-            console.log(`Blog found`);
-            return res.status(200).send(`Blog found`);
+            console.log(`User @${userId} has posted blogs`);
+            return res.status(200).send(`User @${userId} has posted blogs`);
         }
-        console.error(`No blog exists of user: ${id}`);
-        return res.status(404).send(`No blog exists of user: ${id}`);
+        console.error(`No blog exists of user @${userId}`);
+        return res.status(404).send(`No blog exists of user @${userId}`);
     }).catch((error) => {
         console.error(error);
         return res.status(500).send(error);
