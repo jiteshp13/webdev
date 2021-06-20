@@ -8,15 +8,15 @@ exports.signup = (req, res) => {
     admin.save().then(() => {
         console.log(`Successfully created new admin: ${admin.firstName} ${admin.lastName}`);
         return res.status(200).send("New admin assigned");
-    }).catch(() => {
-        console.error("Error creating admin");
-        res.status(500).send("Error creating admin");
+    }).catch((error) => {
+        console.error("Error creating admin", error);
+        return res.status(500).send("Error creating admin");
     })
 };
 
 exports.login = (req, res) => {
     let { email, password } = req.body;
-    Admin.findOne({ email: email, password: password})
+    Admin.findOne({ email: email, password: password })
     .then((userExists) => {
         if(userExists) {
             console.log(`Welcome back, ${email}`);
