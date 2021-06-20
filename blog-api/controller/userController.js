@@ -30,3 +30,21 @@ exports.login = (req, res) => {
         return res.send(500).send(error);
     });
 };
+
+exports.getUser = (req, res) => {
+    let id = req.params.id;
+    id = mongoose.Types.ObjectId(id);
+
+    User.findOne({ _id: id })
+    .then((userExists) => {
+        if(userExists) {
+            console.log("User exists");
+            return res.status(200).send("User exists");
+        }
+        console.error("User does not exists");
+        return res.status(404).send("User does not exists");
+    }).catch((error) => {
+        console.error(error);
+        return res.status(500).send(error);
+    });
+};
